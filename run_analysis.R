@@ -87,5 +87,4 @@ meltedcombinedDataSet <- reshape2::melt(data = combinedDataSet, id = c("SubjectN
 dCastedcombinedDataSet <- reshape2::dcast(data = meltedcombinedDataSet, SubjectNum + Activity ~ variable, fun.aggregate = mean)
 
 #saving to data to file
-fwrite(x = dCastedcombinedDataSet, file = "tidyData.txt", quote = FALSE)
-
+write.table(x=dCastedcombinedDataSet, file = "tidyData.txt", row.name=FALSE )
